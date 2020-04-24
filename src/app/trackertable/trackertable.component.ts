@@ -43,5 +43,10 @@ export class TrackertableComponent implements OnInit, OnChanges {
       } 
     }
     console.log(this.uniqueArr);
+    this.totalIncome = this.uniqueArr. reduce(function(a, b){
+      return a + b;
+      }, 0);
+    console.log(this.totalIncome);
+  }
   }
 }
