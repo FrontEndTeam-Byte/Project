@@ -1,6 +1,7 @@
-
-<h3>Expenditure Tracker</h3>
-  <button type="button" class="btn btn-primary" (click)="staticModal.show()">Add Income</button>
+<div class="myTitle">
+  <h3><span id="titleExpense">Expenditure</span> <span id="titleTracker"> Tracker</span></h3>
+</div>
+  <button type="button" class="btn btn-outline-success" (click)="staticModal.show()">Add Income</button>
   <br/><br/>
   <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
       tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
@@ -57,5 +58,4 @@
       </div>
     </div>
   </div>
-
   <trackertable [amount]="amnt" [description]="desp"></trackertable>

@@ -18,4 +18,5 @@ export class AddincomeComponent implements OnInit {
     this.desp= desc.value;
   }
 } 
+
  

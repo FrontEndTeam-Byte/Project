@@ -1,3 +1,16 @@
 button:disabled {
     cursor: not-allowed;
 }
+.myTitle{
+    text-align: center;
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 50px 0 0 0;
+    margin-bottom: 20px;
+}
+#titleExpense{
+    color: purple;
+}
+#titleTracker{
+    color: #fff;
+}
