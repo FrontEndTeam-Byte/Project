@@ -32,6 +32,10 @@ export class TrackertableComponent implements OnInit, OnChanges {
       this.records.push({desc:this.description2, amount:this.temp, exAmount:this.expenseAmount});
       // console.log(this.records);
     }
+        for (var j = 0; j < this.incomeArr.length; j++) {
+      if (this.uniqueArr.indexOf(this.incomeArr[j]) == -1) {
+        this.uniqueArr.push(this.incomeArr[j]);
+      }
 
     for (var j = 0; j < this.incomeArr.length; j++) {
       if (this.uniqueArr.indexOf(this.incomeArr[j]) == -1) {
