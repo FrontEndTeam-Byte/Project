@@ -32,8 +32,11 @@ export class TrackertableComponent implements OnInit, OnChanges {
       this.records.push({desc:this.description2, amount:this.temp, exAmount:this.expenseAmount});
       // console.log(this.records);
     }
-        
-
+    for(var i = 0; i < this.records.length; i++){
+      //console.log(this.records[i].desc, this.records[i].amount, this.records[i].exAmount);
+      this.incomeArr.push(this.records[i].amount);
+    } 
+    //console.log(this.incomeArr);
     for (var j = 0; j < this.incomeArr.length; j++) {
       if (this.uniqueArr.indexOf(this.incomeArr[j]) == -1) {
         this.uniqueArr.push(this.incomeArr[j]);
@@ -45,5 +48,5 @@ export class TrackertableComponent implements OnInit, OnChanges {
       }, 0);
     console.log(this.totalIncome);
   }
-  }
 }
+
