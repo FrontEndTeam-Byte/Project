@@ -1,4 +1,6 @@
-<table class="table table-striped">
+<!--Beware of little expenses. A small leak will sink a grate ship-->
+
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th scope="col">S.No</th>
@@ -32,4 +34,4 @@
    <h6 class="text-success"> Total Savings: {{totalIncome  | currency:'INR'}} - {{totalExpense | currency:'INR'}} = {{ totalIncome - totalExpense | currency:'INR'}}</h6>
    <h6 class="alert alert-danger" *ngIf="draft" >Running out of Balance</h6>
    <h6 class="alert alert-success" *ngIf="yippee">You doing a Great Job!!!</h6>
-</div>  
+</div> 
