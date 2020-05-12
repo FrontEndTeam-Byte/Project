@@ -1,6 +1,6 @@
 
-<h3>Expenditure Tracker</h3>
-  <button type="button" class="btn btn-primary" (click)="staticModal.show()">Add Income</button>
+  <h3>Expenditure Tracker</h3>
+  <button type="button" class="btn btn-primary mr-3" (click)="staticModal.show()">Add Income</button><button type="button" class="btn btn-primary" (click)="staticModal2.show()">Add Expenditure</button>
   <br/><br/>
   <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
       tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
@@ -58,4 +58,64 @@
     </div>
   </div>
 
+<<<<<<< HEAD
   <trackertable></trackertable>
+=======
+
+  <div class="modal fade" bsModal #staticModal2="bs-modal" [config]="{backdrop: 'static'}"
+      tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="dialog-static-name" class="modal-title pull-left">Add your Expenditure details</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal2.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #detailsForm2 = 'ngForm'> 
+            <div class="form-group">
+              <label for="description" class="form-label">
+                Add the description here
+              </label>
+              <textarea 
+                name="description" 
+                class="form-control" 
+                rows="5" 
+                style="resize: none;"
+                ngModel
+                #desc2='ngModel'
+                required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="Expenditure">
+                Add Expenditure Amount in rupees
+              </label>
+              <input 
+                class="form-control" 
+                type="number" 
+                name="expenditure"
+                ngModel
+                #expense='ngModel'
+                required><br/>
+            </div>
+            <div class="row">
+              <div class="col-sm-6"></div>
+              <div class="col-sm-6">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button type="button" class="btn btn-primary" style="width: 100%;" (click)="sendExpense(desc2, expense); staticModal2.hide(); detailsForm2.reset()" [disabled]="detailsForm2.invalid">Save</button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button type="button" class="btn btn-primary" style="width: 100%;"  (click)="staticModal2.hide()">Cancel</button>
+                  </div>
+                </div>          
+              </div>
+            </div>              
+          </form> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <trackertable [amount]="amnt"  [description]="desp" [expenseAmount]="exAmnt" [description2]="desp2"></trackertable>
+>>>>>>> 6d2a7bee7311a6c2561aab60a47f9a1c04c50751
