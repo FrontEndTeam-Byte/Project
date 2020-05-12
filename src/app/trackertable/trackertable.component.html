@@ -10,9 +10,9 @@
   <tbody>
     <tr *ngFor="let record of records; let i = index">
       <td>{{ i + 1 }}</td>
-      <td>{{ record.desc }}</td>
-      <td>{{ record.amount }}</td>
+      <td>{{ record[i].incomeDescription }}</td>
+      <td>{{ record[i].incomeAmount }}</td>
       <td>-</td>
     </tr>
   </tbody>
-</table>   
+</table>    

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SendRecordsService } from '../shared/send-records.service';
 
 @Component({
   selector: 'addincome',
@@ -7,15 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddincomeComponent implements OnInit {
 
- amnt:any;
- desp:any;
+  constructor(private sendRecord: SendRecordsService) { }
   
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  sendDetails(desc, amount){
-    this.amnt = amount.value;
-    this.desp= desc.value;
+  sendIncome(desc, amount){
+    this.sendRecord.sendIncome([{incomeDescription:desc.value, incomeAmount: amount.value}]);
   }
 } 
  

@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { SendRecordsService } from '../shared/send-records.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'trackertable',
@@ -6,21 +8,23 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
   styleUrls: ['./trackertable.component.css']
 })
 export class TrackertableComponent implements OnInit, OnChanges {
-  @Input()
-  amount:any
-
-  @Input()
-  description:any
-
+  
   records:{desc:string, amount:number}[] = [];
+  subscription: Subscription;
 
-  ngOnChanges() {
-    if(this.amount && this.description){
-      this.records.push({desc:this.description, amount:this.amount});
-      console.log(this.records);
-    }
+  constructor(public receiveRecord: SendRecordsService){
+    this.subscription = this.receiveRecord.getIncome().subscribe(val => {
+      if(val){
+        this.records.push(val);
+      }else{
+        this.records = [];
+      }
+    })
   }
-  ngOnInit(){ 
-    
+
+  ngOnInit(){ }
+  ngOnChanges() { }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
