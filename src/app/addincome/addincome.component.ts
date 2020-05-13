@@ -14,10 +14,6 @@ export class AddincomeComponent implements OnInit {
 
   sendIncome(desc, amount){
     this.sendRecord.sendIncome({incomeDescription:desc.value, incomeAmount: amount.value});
-    /* this.sendRecord.sendIncome({test:'test'});
-    setTimeout(() => {
-      this.sendRecord.sendIncome({demo:'demo'});
-    }, 5000); */
   }
   
 } 

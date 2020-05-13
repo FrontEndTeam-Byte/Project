@@ -16,10 +16,6 @@ export class SendRecordsService {
     this.subject.next(record);
     console.log(record);
   } 
- /*  sendIncome(test:any){
-    this.subject.next(test);
-    console.log(test);
-  } */
 
   /**
    * To get income record
