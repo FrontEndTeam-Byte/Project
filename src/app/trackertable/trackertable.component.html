@@ -12,17 +12,11 @@
   <tbody>
     <tr *ngFor="let record of records; let i = index;">
       <td>{{ i + 1 }}</td>
-<<<<<<< HEAD
-      <td>{{ record[i].incomeDescription }}</td>
-      <td>{{ record[i].incomeAmount }}</td>
+      <td>{{ record.incomeDescription }}</td>
+      <td>{{ record.incomeAmount }}</td>
       <td>-</td>
-=======
-      <td>{{ record.desc }}</td>
-      <td>{{ record.amount | currency:'INR'}}</td>
-      <td>{{record.exAmount | currency:'INR'}}</td>
->>>>>>> 6d2a7bee7311a6c2561aab60a47f9a1c04c50751
     </tr>
-    <tr>
+  <!--   <tr>
       <td></td>
       <td><b>Totals</b></td>
       <td><strong>{{totalIncome | currency:'INR'}}</strong></td>
@@ -33,15 +27,6 @@
       <td><b>Balance</b></td>
       <td rowspan="2"></td>
       <td><strong>{{totalIncome - totalExpense  | currency:'INR'}}</strong></td>
-    </tr> 
+    </tr>  -->
   </tbody>
-<<<<<<< HEAD
 </table>    
-=======
-</table>   
-<div class="alert alert-primary savings container" >
-   <h6 class="text-success"> Total Savings: {{totalIncome  | currency:'INR'}} - {{totalExpense | currency:'INR'}} = {{ totalIncome - totalExpense | currency:'INR'}}</h6>
-   <h6 class="alert alert-danger" *ngIf="draft" >Running out of Balance</h6>
-   <h6 class="alert alert-success" *ngIf="yippee">You doing a Great Job!!!</h6>
-</div> 
->>>>>>> 6d2a7bee7311a6c2561aab60a47f9a1c04c50751

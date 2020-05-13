@@ -12,9 +12,14 @@ export class SendRecordsService {
    * To send income record
    * @param record - to send one record
    */
-  sendIncome(record: {incomeDescription: string, incomeAmount: number}[]){
+   sendIncome(record: {incomeDescription: string, incomeAmount: number}){
     this.subject.next(record);
-  }
+    console.log(record);
+  } 
+ /*  sendIncome(test:any){
+    this.subject.next(test);
+    console.log(test);
+  } */
 
   /**
    * To get income record

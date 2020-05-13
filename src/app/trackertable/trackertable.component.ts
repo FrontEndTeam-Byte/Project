@@ -13,20 +13,24 @@ export class TrackertableComponent implements OnInit, OnChanges {
   subscription: Subscription;
 
   constructor(public receiveRecord: SendRecordsService){
-    this.subscription = this.receiveRecord.getIncome().subscribe(val => {
-      if(val){
-        this.records.push(val);
-      }else{
-        this.records = [];
-      }
-    })
+    
   }
 
-  ngOnInit(){ }
-  ngOnChanges() { }
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+  ngOnInit(){ 
+    this.subscription = this.receiveRecord.getIncome().subscribe(val => {
+      console.log(val);
+      if(val){
+        this.records.push(val);
+        console.log(val);
+      }else{
+        this.records = [];
+      } 
+    })
   }
-}
+  ngOnChanges() { }
+  /* ngOnDestroy() {
+    this.subscription.unsubscribe();
+  } */
+} 
 
  
